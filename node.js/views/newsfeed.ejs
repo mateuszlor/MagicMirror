@@ -1,0 +1,36 @@
+<!-- views/profile.ejs -->
+<!doctype html>
+<html>
+<head>
+	<title>Node Authentication</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+	<style>
+		body 		{ padding-top:80px; word-wrap:break-word; }
+	</style>
+</head>
+<body>
+<div class="container">
+
+	<div class="page-header text-center">
+		<h1><span class="fa fa-anchor"></span> User newsfeed</h1>
+		<a href="/logout" class="btn btn-default btn-sm">Logout</a>
+	</div>
+
+	<div>
+				<h3 class="text-primary"><span class="fa fa-facebook"></span> Facebook</h3>
+					<% for(var i=0; i < data.length; i++) { %>
+						<p>
+							<strong>FROM</strong>: <%= data[i].from.name %><br>
+							<strong>NAME</strong>: <%= data[i].name %><br>
+							<strong>MESSAGE</strong>: <%= data[i].message %><br>
+							<strong>DESCRIPTION</strong>: <%= data[i].description %>
+						</p>
+					<% } %>
+		</div>
+
+	</div>
+
+</div>
+</body>
+</html>

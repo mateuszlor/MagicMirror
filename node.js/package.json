@@ -1,0 +1,29 @@
+{
+  "dependencies": {   
+    "bcrypt-nodejs" : "*",
+    "body-parser": "*",
+    "collections": "*",
+    "connect-flash" : "*",
+    "cookie-parser": "*",
+    "express": "*",
+    "fb": "*",
+    "log4js": "*",
+    "mongoose": "*",
+    "morgan": "*",
+    "node-rest-client": "*",
+    "serve-favicon": "*",
+    "string": "*",
+    "string-format": "*",     
+    "passport" : "*",     
+    "passport-local" : "*",  
+    "passport-facebook" : "*",
+
+    "ejs" : "~0.8.5",     
+    "express-session": "*"
+  },
+  "description": "MagicMirror",
+  "license": "Beerware",
+  "main": "server.js",
+  "name": "MagicMirror",
+  "readme": "readme.md"
+}
