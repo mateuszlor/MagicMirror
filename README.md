@@ -21,5 +21,5 @@ python inoutboard.py
 
 ### API usage
 
-- GET localhost:8080/discover - devices discovery
-- GET localhost:8080/one - closest device
+- GET _localhost:8080/discover_ - devices discovery
+- GET _localhost:8080/one_ - closest device
