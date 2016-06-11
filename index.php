@@ -18,12 +18,13 @@
 <body>
 
 	<div class="top right"><div class="windsun small dimmed"></div><div class="temp"></div><div class="forecast small dimmed"></div></div>
+	<!-- mrozak START -->
+	<div class="lower-third center-hor"><div class="news2 medium"></div></div>
+	<!-- mrozak END -->
 	<div class="top left"><div class="date small dimmed"></div><div class="time" id="time"></div><div class="calendar xxsmall"></div></div>
-	<div class="center-ver center-hor"><!-- <div class="dishwasher light">Vaatwasser is klaar!</div> --></div>
-	<div class="lower-third center-hor"><div class="compliment light"></div></div>
-	<div class="bottom center-hor"><div class="news medium"></div></div>
-
-</div>
+	<div class="center-ver center-hor"></div>
+	<div class="top center-hor"><div class="compliment light"></div></div>
+	<div class="bottom center-hor"><div class="news1 medium"></div></div>
 
 <script src="js/jquery.js"></script>
 <script src="js/jquery.feedToJSON.js"></script>
@@ -37,6 +38,9 @@
 <script src="js/weather/weather.js"></script>
 <script src="js/time/time.js"></script>
 <script src="js/news/news.js"></script>
+<!-- mrozak START -->
+<script src="js/news/news2.js"></script>
+<!-- mrozak END -->
 <script src="js/main.js?nocache=<?php echo md5(microtime()) ?>"></script>
 <!-- <script src="js/socket.io.min.js"></script> -->
 <?php  include(dirname(__FILE__).'/controllers/modules.php');?>
