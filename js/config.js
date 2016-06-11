@@ -1,3 +1,24 @@
+// mrozak START 
+var RSSsources = new Array(
+    'http://helposx.apple.com/rss/leopard/serverdocupdates.xml',
+    'http://nvidianews.nvidia.com/cats/mobile.xml',
+    'film.wp.pl/rss.xml'
+    );
+
+var whosNext = 2;
+var address = '';
+
+if (whosNext == 1) {
+    address = RSSsources[0];
+} else if (whosNext == 2) {
+    address = RSSsources[1];
+} else if (whosNext == 3) {
+    address = RSSsources[2];
+} else {
+    alert("I do not know this guy!");
+}
+// mrozak END
+
 var config = {
     lang: 'pl',
     time: {
@@ -62,7 +83,10 @@ var config = {
 		 },
 		]
     },
-    news: {
-        feed: 'http://wiadomosci.wp.pl/ver,rss,rss.xml'
+    news1: {
+        feed1: 'http://wiadomosci.wp.pl/ver,rss,rss.xml',
+    },
+    news2: {
+        feed2: address,
     }
 }
