@@ -191,6 +191,10 @@ html {
   display: none;
 }
 
+.facebook {
+  line-height: 50px !important;
+}
+
 @font-face {
   font-family: 'HelveticaNeue-UltraLight';
   src: url('../font/HelveticaNeue-UltraLight.eot');
