@@ -38,7 +38,7 @@ userSchema.methods.validPassword = function(password) {
 
 
 // this method hashes the password and sets the users password
-userSchema.methods.hashPassword = function(password) {
+userSchema.methods.generateHash = function(password) {
     var user = this;
 
     // hash the password

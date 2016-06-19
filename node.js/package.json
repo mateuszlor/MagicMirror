@@ -1,9 +1,9 @@
 {
-  "dependencies": {   
-    "bcrypt-nodejs" : "*",
+  "dependencies": {
+    "bcrypt-nodejs": "*",
     "body-parser": "*",
     "collections": "*",
-    "connect-flash" : "*",
+    "connect-flash": "*",
     "cookie-parser": "*",
     "express": "*",
     "fb": "*",
@@ -13,12 +13,16 @@
     "node-rest-client": "*",
     "serve-favicon": "*",
     "string": "*",
-    "string-format": "*",     
-    "passport" : "*",     
-    "passport-local" : "*",  
-    "passport-facebook" : "*",
+    "string-format": "*",
+    "passport": "*",
+    "passport-local": "*",
+    "passport-facebook": "*",
+    "php-express": "*",
+    "util": "*",
+    "xml": "*",
+    "xmlbuilder": "*",
 
-    "ejs" : "~0.8.5",     
+    "ejs": "~0.8.5",
     "express-session": "*"
   },
   "description": "MagicMirror",
