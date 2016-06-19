@@ -19,7 +19,7 @@
 
 	<div class="top right"><div class="windsun small dimmed"></div><div class="temp"></div><div class="forecast small dimmed"></div></div>
 	<!-- mrozak START -->
-	<div class="lower-third center-hor"><div class="news2 medium"></div></div>
+	<div class="lower-third center-hor"><div class="facebook small"></div></div>
 	<!-- mrozak END -->
 	<div class="top left"><div class="date small dimmed"></div><div class="time" id="time"></div><div class="calendar xxsmall"></div></div>
 	<div class="center-ver center-hor"></div>
@@ -34,12 +34,12 @@
 <script src="js/rrule.js"></script>
 <script src="js/version/version.js"></script>
 <script src="js/calendar/calendar.js"></script>
-<script src="js/compliments/compliments.js"></script>
+<!-- <script src="js/compliments/compliments.js"></script> -->
 <script src="js/weather/weather.js"></script>
 <script src="js/time/time.js"></script>
-<script src="js/news/news.js"></script>
+<script src="js/news/news1.js"></script>
 <!-- mrozak START -->
-<script src="js/news/news2.js"></script>
+<script src="js/news/facebook.js"></script>
 <!-- mrozak END -->
 <script src="js/main.js?nocache=<?php echo md5(microtime()) ?>"></script>
 <!-- <script src="js/socket.io.min.js"></script> -->

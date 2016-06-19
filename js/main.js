@@ -57,6 +57,6 @@ jQuery(document).ready(function($) {
 
 	news1.init();
 
-	news2.init();
+	facebook.init();
 
 });

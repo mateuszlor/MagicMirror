@@ -2,10 +2,10 @@
 var RSSsources = new Array(
     'http://helposx.apple.com/rss/leopard/serverdocupdates.xml',
     'http://nvidianews.nvidia.com/cats/mobile.xml',
-    'film.wp.pl/rss.xml'
+    "http://localhost:8080/json"
     );
 
-var whosNext = 2;
+var whosNext = 3;
 var address = '';
 
 if (whosNext == 1) {
@@ -86,7 +86,7 @@ var config = {
     news1: {
         feed1: 'http://wiadomosci.wp.pl/ver,rss,rss.xml',
     },
-    news2: {
+    facebook: {
         feed2: address,
     }
 }
