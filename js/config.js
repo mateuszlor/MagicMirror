@@ -88,5 +88,11 @@ var config = {
     },
     facebook: {
         feed2: address,
+    },
+    update: {
+        enableUrl: "http://localhost:82/",
+        disableUrl: "http://localhost:82/black.html",
+        distanceUrl: "http://192.168.1.101/distance",
+        show: true,
     }
 }
