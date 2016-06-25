@@ -58,5 +58,7 @@ jQuery(document).ready(function($) {
 	news1.init();
 
 	facebook.init();
+	
+	update.init();
 
 });

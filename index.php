@@ -26,6 +26,7 @@
 	<div class="top center-hor"><div class="compliment light"></div></div>
 	<div class="bottom center-hor"><div class="news1 medium"></div></div>
 
+<script src="js/update/update.js"></script>
 <script src="js/jquery.js"></script>
 <script src="js/jquery.feedToJSON.js"></script>
 <script src="js/ical_parser.js"></script>
