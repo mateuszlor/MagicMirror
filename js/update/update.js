@@ -15,10 +15,10 @@ update.checkIfActive = function () {
 		console.log("showingCount == 0 - checking again")
 	  	$.getJSON(config.update.distanceUrl)
 		    .success(function(data) {
-				if (data && data.distance <= 400) {
+				if (data && data.distance < config.update.distance) {
 					console.log("Somebody in range, distance = " + data.distance)
 					config.update.show = false;
-					update.showingCount = 6;
+					update.showingCount = config.update.upTime - 1;
 					// window.location.reload();
 					if(window.location.href != config.update.enableUrl)
 					{
