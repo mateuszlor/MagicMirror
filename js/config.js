@@ -62,25 +62,25 @@ var config = {
 		defaultSymbol: 'calendar', // Fontawsome Symbol see http://fontawesome.io/cheatsheet/
         urls: [
 		{
-			symbol: 'calendar-plus-o', 
-			url: 'https://p01-calendarws.icloud.com/ca/subscribe/1/n6x7Farxpt7m9S8bHg1TGArSj7J6kanm_2KEoJPL5YIAk3y70FpRo4GyWwO-6QfHSY5mXtHcRGVxYZUf7U3HPDOTG5x0qYnno1Zr_VuKH2M'
+			symbol: 'pl', 
+			url: 'https://calendar.google.com/calendar/ical/3llcg7jskr1qchekdp8j46os70%40group.calendar.google.com/private-5b3aa21ae8859fe99fc7c80b5651d2c1/basic.ics'
 		},
 		{
-			symbol: 'soccer-ball-o',
-			url: 'https://www.google.com/calendar/ical/akvbisn5iha43idv0ktdalnor4%40group.calendar.google.com/public/basic.ics',
+			symbol: 'soccer',
+			url: 'https://calendar.google.com/calendar/ical/wieza203%40gmail.com/private-a23b6417d0e404d5a6f919f46dba3ece/basic.ics',
 		},
-		{
-			 symbol: 'mars',
-			 url: "https://server/url/to/his.ics",
-		 },
-		 {
-			 symbol: 'venus',
-			 url: "https://server/url/to/hers.ics",
-		 },
-		{
-			 symbol: 'venus-mars',
-			 url: "https://server/url/to/theirs.ics",
-		 },
+		// {
+		// 	 symbol: 'mars',
+		// 	 url: "https://server/url/to/his.ics",
+		//  },
+		//  {
+		// 	 symbol: 'venus',
+		// 	 url: "https://server/url/to/hers.ics",
+		//  },
+		// {
+		// 	 symbol: 'venus-mars',
+		// 	 url: "https://server/url/to/theirs.ics",
+		//  },
 		]
     },
     news1: {
