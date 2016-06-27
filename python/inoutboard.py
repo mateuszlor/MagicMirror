@@ -18,7 +18,8 @@ class discover:
             output = '[';
             for device in nearby_devices:
                 print "Found device with address: ",  device[0], " and name: ", device[1]
-                output += '{address:' + device[0] + ', name: ' + device[1] + '},'
+                output += "{\"address\":\"" + device[0] + "\", \"name\": \"" + device[1] + "\"},"
+            output = output[:-1];
             output += ']';
             return output
         except Exception, e:
@@ -32,7 +33,7 @@ class get_one:
             output = '[';
             for device in nearby_devices:
                 print "Found device with address: ",  device[0], " and name: ", device[1]
-                output += '{address:' + device[0] + ', name: ' + device[1] + '},'
+                output += "{\"address\":\"" + device[0] + "\", \"name\": \"" + device[1] + "\"},"
             output += ']';
             return output
         except Exception, e:
