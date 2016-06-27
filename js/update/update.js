@@ -19,11 +19,47 @@ update.checkIfActive = function () {
 					console.log("Somebody in range, distance = " + data.distance)
 					config.update.show = false;
 					update.showingCount = config.update.upTime - 1;
-					// window.location.reload();
-					if(window.location.href != config.update.enableUrl)
-					{
-						window.location.href = config.update.enableUrl;
-					}
+
+					var user = 0;
+					$.getJSON(config.update.bluetoothUrl)
+		    			.success(function(btData) {
+		    				queryHelper.fetchQuery()
+		    				console.log(queryHelper.queries);
+		    				console.log(btData);
+		    				var dev = btData[btData.length - 1]
+
+		    				console.log(dev);
+
+		    				switch(dev.address) {
+		    					case "FA:75:46:03:37:1E": // Ulefone Power
+		    						console.log("Found known device " + dev.address);
+		    						user = 1;
+		    						break;
+		    					case "2C:54:CF:4A:82:E7": // Kamil G2},
+		    						console.log("Found known device " + dev.address);
+		    						user = 2;
+		    						break;
+		    					case "CC:07:AB:8B:EB:56": // S3-Trójka"
+		    						console.log("Found known device " + dev.address);
+		    						user = 3;
+		    						break;
+		    					default:
+		    						console.log("Found unknown device " + dev.address);
+		    				}
+
+		    				var url = config.update.enableUrl + "?user=" + user;
+							if(window.location.href != url)
+							{
+								window.location.href = url;
+							}
+		    			})
+		    			.error(function() {
+		    				var url = config.update.enableUrl + "?user=" + user;
+							if(window.location.href != url)
+							{
+								window.location.href = url;
+							}
+		    			})
 				}
 				else {
 					console.log("Nobody in range")

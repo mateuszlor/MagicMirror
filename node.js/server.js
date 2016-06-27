@@ -59,7 +59,7 @@ app.use(function (req, res, next) {
 require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
 
 // launch ======================================================================
-var port = 8080
+var port = 8081
 app.listen(port);
 logger.info("App listens on port " + port);
 

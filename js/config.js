@@ -2,7 +2,7 @@
 var RSSsources = new Array(
     'http://helposx.apple.com/rss/leopard/serverdocupdates.xml',
     'http://nvidianews.nvidia.com/cats/mobile.xml',
-    "http://localhost:8080/json"
+    "http://localhost:8081/json"
     );
 
 var whosNext = 3;
@@ -87,12 +87,14 @@ var config = {
         feed1: 'http://wiadomosci.wp.pl/ver,rss,rss.xml',
     },
     facebook: {
-        feed2: address,
+        url: "http://localhost:8081/json",
+        interval: 10000,
     },
     update: {
         enableUrl: "http://localhost:82/",
         disableUrl: "http://localhost:82/black.html",
         distanceUrl: "http://192.168.1.101/distance",
+        bluetoothUrl: "http://localhost:8080/discover",
         distance: 200,
         upTime: 6, // real time = n x 10s 
     }

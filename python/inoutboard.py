@@ -13,6 +13,7 @@ app = web.application(urls, globals())
 
 class discover:        
     def GET(self):
+        web.header("Access-Control-Allow-Origin", "*");
         try:
             nearby_devices = bluetooth.discover_devices(lookup_names = True)
             output = '[';

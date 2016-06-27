@@ -1,8 +1,8 @@
 // A lot of this code is from the original feedToJson function that was included with this project
 // The new code allows for multiple feeds to be used but a bunch of variables and such have literally been copied and pasted into this code and some help from here: http://jsfiddle.net/BDK46/
-// The original version can be found here: http://airshp.com/2011/jquery-plugin-feed2-to-json/
+// The original version can be found here: http://airshp.com/2011/jquery-plugin-url-to-json/
 var facebook = {
-	feed2: config.facebook.feed2 || null,
+	url: config.facebook.url || null,
 	newsLocation: '.facebook',
 	newsItems: [],
 	seenNewsItem: [],
@@ -18,25 +18,25 @@ var facebook = {
 }
 
 /**
- * Creates the query string that will be used to grab a converted RSS feed2 into a JSON object via Yahoo
- * @param  {string} feed2 The original location of the RSS feed2
- * @return {string}      The new location of the RSS feed2 provided by Yahoo
+ * Creates the query string that will be used to grab a converted RSS url into a JSON object via Yahoo
+ * @param  {string} url The original location of the RSS url
+ * @return {string}      The new location of the RSS url provided by Yahoo
  */
-facebook.buildQueryString = function (feed2) {
+facebook.buildQueryString = function (url) {
 
-	return this._yqURL + this._yqlQS + '\'' + encodeURIComponent(feed2) + '\'';
+	return this._yqURL + this._yqlQS + '\'' + encodeURIComponent(url) + '\'';	
 
 }
 
 /**
- * Fetches the facebook for each feed2 provided in the config file
+ * Fetches the facebook for each url provided in the config file
  */
 facebook.fetchNews = function () {
 
-	// Reset the facebook feed2
+	// Reset the facebook url
 	this.newsItems = [];
 
-	this.feed2.forEach(function (_curr) {
+	this.url.forEach(function (_curr) {
 
 		var _yqUrlString = this.buildQueryString(_curr);
 		// this.fetchFeed(_yqUrlString);
@@ -48,7 +48,7 @@ facebook.fetchNews = function () {
 
 /**
  * Runs a GET request to Yahoo's service
- * @param  {string} yqUrl The URL being used to grab the RSS feed2 (in JSON format)
+ * @param  {string} yqUrl The URL being used to grab the RSS url (in JSON format)
  */
 facebook.fetchFeed = function (yqUrl) {
 
@@ -61,22 +61,22 @@ facebook.fetchFeed = function (yqUrl) {
 			if (data.query.count > 0) {
 				this.parseFeed(data.query.results.item);
 			} else {
-				console.error('No feed2 results for: ' + yqUrl);
+				console.error('No url results for: ' + yqUrl);
 			}
 
 		}.bind(this),
 		error: function () {
 			// non-specific error message that should be updated
-			console.error('No feed2 results for: ' + yqUrl);
+			console.error('No url results for: ' + yqUrl);
 		}
 	});
 
 }
 
 /**
- * Parses each item in a single facebook feed2
- * @param  {Object} data The facebook feed2 that was returned by Yahoo
- * @return {boolean}      Confirms that the feed2 was parsed correctly
+ * Parses each item in a single facebook url
+ * @param  {Object} data The facebook url that was returned by Yahoo
+ * @return {boolean}      Confirms that the url was parsed correctly
  */
 facebook.parseFeed = function (data) {
 
@@ -95,7 +95,7 @@ facebook.parseFeed = function (data) {
 }
 
 /**
- * Loops through each available and unseen facebook feed2 after it has been retrieved from Yahoo and shows it on the screen
+ * Loops through each available and unseen facebook url after it has been retrieved from Yahoo and shows it on the screen
  * When all facebook titles have been exhausted, the list resets and randomly chooses from the original set of items
  * @return {boolean} Confirms that there is a list of facebook items to loop through and that one has been shown on the screen
  */
@@ -133,10 +133,10 @@ facebook.showNews = function () {
 
 facebook.init = function () {
 
-	if (this.feed2 === null || (this.feed2 instanceof Array === false && typeof this.feed2 !== 'string')) {
+	if (this.url === null || (this.url instanceof Array === false && typeof this.url !== 'string')) {
 		return false;
-	} else if (typeof this.feed2 === 'string') {
-		this.feed2 = [this.feed2];
+	} else if (typeof this.url === 'string') {
+		this.url = [this.url];
 	}
 
 	this.fetchNews();
