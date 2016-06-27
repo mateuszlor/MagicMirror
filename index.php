@@ -28,6 +28,7 @@
 
 <script src="js/update/update.js"></script>
 <script src="js/jquery.js"></script>
+<script src="js/queryHelper.js"></script>
 <script src="js/jquery.feedToJSON.js"></script>
 <script src="js/ical_parser.js"></script>
 <script src="js/moment-with-locales.min.js"></script>
