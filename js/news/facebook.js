@@ -133,21 +133,28 @@ facebook.showNews = function () {
 
 facebook.init = function () {
 
-	if (this.url === null || (this.url instanceof Array === false && typeof this.url !== 'string')) {
-		return false;
-	} else if (typeof this.url === 'string') {
-		this.url = [this.url];
-	}
+	queryHelper.fetchQuery()
+	var user = queryHelper.queries.user;
 
-	this.fetchNews();
-	this.showNews();
+	console.log("User ID from query string = " + user);
 
-	this.fetchNewsIntervalId = setInterval(function () {
-		this.fetchNews()
-	}.bind(this), this.fetchInterval)
+	if(user == 1) {
+		if (this.url === null || (this.url instanceof Array === false && typeof this.url !== 'string')) {
+			return false;
+		} else if (typeof this.url === 'string') {
+			this.url = [this.url];
+		}
 
-	this.intervalId = setInterval(function () {
+		this.fetchNews();
 		this.showNews();
-	}.bind(this), this.updateInterval);
+
+		this.fetchNewsIntervalId = setInterval(function () {
+			this.fetchNews()
+		}.bind(this), this.fetchInterval)
+
+		this.intervalId = setInterval(function () {
+			this.showNews();
+		}.bind(this), this.updateInterval);
+	}
 
 }

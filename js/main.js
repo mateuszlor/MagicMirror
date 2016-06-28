@@ -55,7 +55,7 @@ jQuery(document).ready(function($) {
 
 	weather.init();
 
-	news1.init();
+	news.init();
 
 	facebook.init();
 	

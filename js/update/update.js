@@ -32,19 +32,19 @@ update.checkIfActive = function () {
 
 		    				switch(dev.address) {
 		    					case "FA:75:46:03:37:1E": // Ulefone Power
-		    						console.log("Found known device " + dev.address);
+		    						console.log("Found known device " + dev.address + " \(" + dev.name + "\)");
 		    						user = 1;
 		    						break;
 		    					case "2C:54:CF:4A:82:E7": // Kamil G2},
-		    						console.log("Found known device " + dev.address);
+		    						console.log("Found known device " + dev.address + " \(" + dev.name + "\)");
 		    						user = 2;
 		    						break;
 		    					case "CC:07:AB:8B:EB:56": // S3-Trójka"
-		    						console.log("Found known device " + dev.address);
+		    						console.log("Found known device " + dev.address + " \(" + dev.name + "\)");
 		    						user = 3;
 		    						break;
 		    					default:
-		    						console.log("Found unknown device " + dev.address);
+		    						console.log("Found known device " + dev.address + " \(" + dev.name + "\)");
 		    				}
 
 		    				var url = config.update.enableUrl + "?user=" + user;

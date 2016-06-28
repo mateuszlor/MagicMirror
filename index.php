@@ -24,7 +24,7 @@
 	<div class="top left"><div class="date small dimmed"></div><div class="time" id="time"></div><div class="calendar xxsmall"></div></div>
 	<div class="center-ver center-hor"></div>
 	<div class="top center-hor"><div class="compliment light"></div></div>
-	<div class="bottom center-hor"><div class="news1 medium"></div></div>
+	<div class="bottom center-hor"><div class="news medium"></div></div>
 
 <script src="js/update/update.js"></script>
 <script src="js/jquery.js"></script>
@@ -39,7 +39,7 @@
 <!-- <script src="js/compliments/compliments.js"></script> -->
 <script src="js/weather/weather.js"></script>
 <script src="js/time/time.js"></script>
-<script src="js/news/news1.js"></script>
+<script src="js/news/news.js"></script>
 <!-- mrozak START -->
 <script src="js/news/facebook.js"></script>
 <!-- mrozak END -->

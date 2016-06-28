@@ -7,11 +7,11 @@ var calendar = {
 	intervalId: null,
 	dataIntervalId: null,
 	maximumEntries: config.calendar.maximumEntries || 10,
-	calendarUrl: (typeof config.calendar.urls == 'undefined') ? config.calendar.url : config.calendar.urls[0].url,
+	calendarUrl: null, //(typeof config.calendar.urls == 'undefined') ? config.calendar.url : config.calendar.urls[0].url,
 	calendarPos: 0,
 	defaultSymbol: config.calendar.defaultSymbol || 'none',
-	calendarSymbol: (typeof config.calendar.urls == 'undefined') ? config.calendar.defaultSymbol || 'none' : config.calendar.urls[0].symbol,
-	displaySymbol: (typeof config.calendar.displaySymbol == 'undefined') ? false : config.calendar.displaySymbol,
+	calendarSymbol: config.calendar.defaultSymbol, //(typeof config.calendar.urls == 'undefined') ? config.calendar.defaultSymbol || 'none' : config.calendar.urls[0].symbol,
+	displaySymbol: config.calendar.displaySymbol, //(typeof config.calendar.displaySymbol == 'undefined') ? false : config.calendar.displaySymbol,
 	shortRunningText: 'still',
 	longRunningText: 'until',
 }
@@ -128,23 +128,23 @@ calendar.updateData = function (callback) {
 	new ical_parser("controllers/calendar.php" + "?url="+encodeURIComponent(this.calendarUrl), function(cal) {
 		this.processEvents(this.calendarUrl, cal.getEvents());
 
-		this.calendarPos++;
-		if ((typeof config.calendar.urls == 'undefined') || (this.calendarPos >= config.calendar.urls.length)) {
-			this.calendarPos = 0;
-			// Last Calendar in List is updated, run Callback (i.e. updateScreen)
-			if (callback !== undefined && Object.prototype.toString.call(callback) === '[object Function]') {
-				callback(this.eventList);
-			}
-		} else {
-			// Loading all Calendars in parallel does not work, load them one by one.
-			setTimeout(function () {
-				this.updateData(this.updateCalendar.bind(this));
-			}.bind(this), 10);
-		}
-		if (typeof config.calendar.urls != 'undefined') {
-			this.calendarUrl = config.calendar.urls[this.calendarPos].url;
-			this.calendarSymbol = config.calendar.urls[this.calendarPos].symbol || this.defaultSymbol;
-		}
+		// this.calendarPos++;
+		// if ((typeof config.calendar.urls == 'undefined') || (this.calendarPos >= config.calendar.urls.length)) {
+		// 	this.calendarPos = 0;
+		// 	// Last Calendar in List is updated, run Callback (i.e. updateScreen)
+		 	//if (callback !== undefined && Object.prototype.toString.call(callback) === '[object Function]') {
+		 		callback(this.eventList);
+			//}
+		// } else {
+		// 	// Loading all Calendars in parallel does not work, load them one by one.
+		// 	setTimeout(function () {
+		// 		this.updateData(this.updateCalendar.bind(this));
+		// 	}.bind(this), 10);
+		// }
+		// if (typeof config.calendar.urls != 'undefined') {
+		// 	this.calendarUrl = config.calendar.urls[this.calendarPos].url;
+		// 	this.calendarSymbol = config.calendar.urls[this.calendarPos].symbol || this.defaultSymbol;
+		// }
 
 	}.bind(this));
 
@@ -183,6 +183,15 @@ calendar.updateCalendar = function (eventList) {
 }
 
 calendar.init = function () {
+
+	queryHelper.fetchQuery()
+	var user = queryHelper.queries.user;
+
+	this.calendarUrl = config.calendar.urls[user].url;
+
+	console.log("Calendar url = " + this.calendarUrl);
+
+	//(typeof config.calendar.urls == 'undefined') ? config.calendar.url : config.calendar.urls[0].url,
 
 	this.updateData(this.updateCalendar.bind(this));
 

@@ -61,6 +61,14 @@ var config = {
 		displaySymbol: true,
 		defaultSymbol: 'calendar', // Fontawsome Symbol see http://fontawesome.io/cheatsheet/
         urls: [
+        {
+            symbol: "disabled",
+            url: "none",
+        },
+        {
+            symbol: "Mateusz",
+            url:"nie_chce_kalendarza",
+        },
 		{
 			symbol: 'pl', 
 			url: 'https://calendar.google.com/calendar/ical/3llcg7jskr1qchekdp8j46os70%40group.calendar.google.com/private-5b3aa21ae8859fe99fc7c80b5651d2c1/basic.ics'
@@ -69,22 +77,26 @@ var config = {
 			symbol: 'soccer',
 			url: 'https://calendar.google.com/calendar/ical/wieza203%40gmail.com/private-a23b6417d0e404d5a6f919f46dba3ece/basic.ics',
 		},
-		// {
-		// 	 symbol: 'mars',
-		// 	 url: "https://server/url/to/his.ics",
-		//  },
-		//  {
-		// 	 symbol: 'venus',
-		// 	 url: "https://server/url/to/hers.ics",
-		//  },
-		// {
-		// 	 symbol: 'venus-mars',
-		// 	 url: "https://server/url/to/theirs.ics",
-		//  },
 		]
     },
-    news1: {
-        feed1: 'http://wiadomosci.wp.pl/ver,rss,rss.xml',
+    news: {
+        urls: [
+        {
+            url: 'http://www.p.lodz.pl/pl/rss.xml',
+        },
+        {
+            url: 'none',
+        },
+        {
+            url: 'http://www.tvn24.pl/najnowsze.xml',
+        },
+        {
+            url: 'http://www.theverge.com/rss/frontpage',
+        },
+        {
+            url: 'none',
+        },
+        ]
     },
     facebook: {
         url: "http://localhost:8081/json",
